@@ -3,6 +3,10 @@
 This library is really simple popup modal same as Sweet Alert in React Native.
 
 React-native-swal popup for a second(It can be cutomize) and closed.
+
+
+![ezgif-5-3efbc9f5a3](https://user-images.githubusercontent.com/105104335/223360296-37321a8c-d263-415d-8428-de4c9f7c4b9c.gif)
+
 ## Document
 
 - [Installation](#installation)
