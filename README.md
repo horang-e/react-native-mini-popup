@@ -1,2 +1,2 @@
-# react-native-mini-popup
+# react-native-swal
 making a library
