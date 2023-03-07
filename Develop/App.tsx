@@ -12,12 +12,12 @@ const App = () => {
         swal={swal}
         setSwal={setSwal}
         text={text}
-        backgroundcolor="pink"
+        backgroundcolor="#225"
         color="white"
         positionFromBottom={80}
         fontsize={16}
         touchOutSideClose={true}
-        duration={2000}
+        duration={1000}
       />
       <Button title="SWAL" onPress={() => setSwal(true)} />
     </SafeAreaView>

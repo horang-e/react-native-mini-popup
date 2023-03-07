@@ -1,6 +1,18 @@
 import { View, Text, Modal, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import React, { useEffect } from 'react';
 
+export type SwalProps = {
+  swal: boolean;
+  setSwal: (open: boolean) => void;
+  text: string;
+  backgroundcolor?: string;
+  color?: string;
+  positionFromBottom?: number;
+  fontsize?: number;
+  touchOutSideClose?: boolean;
+  duration?: number;
+};
+
 const Swal = ({
   swal,
   setSwal,
@@ -10,8 +22,8 @@ const Swal = ({
   positionFromBottom,
   fontsize,
   touchOutSideClose,
-  duration
-}): JSX.Element => {
+  duration,
+}: SwalProps): JSX.Element => {
   const styles = StyleSheet.create({
     centeredView: {
       flex: 1,
@@ -24,7 +36,7 @@ const Swal = ({
       // padding: 35,
       width: '90%',
       paddingVertical: 20,
-      paddingHorizontal:5,
+      paddingHorizontal: 5,
       alignItems: 'center',
       justifyContent: 'center',
       shadowColor: '#000',
