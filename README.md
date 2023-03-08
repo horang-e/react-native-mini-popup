@@ -11,7 +11,7 @@ React-native-swal popup for a second(It can be cutomize) and closed.
 ![ezgif-5-3efbc9f5a3](https://user-images.githubusercontent.com/105104335/223360296-37321a8c-d263-415d-8428-de4c9f7c4b9c.gif)
 ![ezgif-1-48c03b2d4b](https://user-images.githubusercontent.com/105104335/223648951-9154156b-3b5a-44a4-889b-5a62d81c2da7.gif)
 
-
+한국어 설명 :https://velog.io/@horang-e/React-native-swal-npm-%EB%B0%B0%ED%8F%AC
 
 ## Document
 
