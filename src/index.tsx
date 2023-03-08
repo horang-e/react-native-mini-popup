@@ -1,4 +1,4 @@
-import { View, Text, Modal, StyleSheet, TouchableOpacity, Platform } from 'react-native';
+import { View, Text, Modal, StyleSheet, Platform, Pressable } from 'react-native';
 import React, { useEffect } from 'react';
 
 export type SwalProps = {
@@ -11,6 +11,11 @@ export type SwalProps = {
   fontsize?: number;
   touchOutSideClose?: boolean;
   duration?: number;
+  textStyle?: {};
+  button?: boolean;
+  btnStyle?: {};
+  btnFunction?: () => void;
+  popup?: boolean;
 };
 
 const Swal = ({
@@ -23,6 +28,11 @@ const Swal = ({
   fontsize = 16,
   touchOutSideClose = false,
   duration = 2000,
+  textStyle,
+  button = false,
+  btnStyle,
+  btnFunction = () => setSwal(false),
+  popup = true,
 }: SwalProps): JSX.Element => {
   const styles = StyleSheet.create({
     centeredView: {
@@ -36,9 +46,9 @@ const Swal = ({
       // padding: 35,
       width: '90%',
       paddingVertical: 20,
-      paddingHorizontal: 5,
+      paddingHorizontal: 25,
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: button ? 'space-between' : 'center',
       shadowColor: '#000',
       shadowOffset: {
         width: 0,
@@ -48,19 +58,24 @@ const Swal = ({
       shadowRadius: 4,
       elevation: 5,
       backgroundColor: backgroundcolor,
+      flexDirection: button ? 'row' : 'column',
     },
     modalText: {
-      // fontFamily: '',
-      fontSize: fontsize,
       lineHeight: fontsize,
       color: color,
       fontWeight: Platform.OS == 'ios' ? '700' : undefined,
+      ...textStyle,
+    },
+    btnText: {
+      color:'white',
+      ...btnStyle,
+      textDecorationLine: 'underline',
     },
   });
 
   useEffect(() => {
     setTimeout(() => {
-      swal && setSwal(false);
+      popup && swal && setSwal(false);
     }, duration);
   }, [swal]);
 
@@ -73,11 +88,16 @@ const Swal = ({
         onRequestClose={() => {
           setSwal(false);
         }}>
-        <TouchableOpacity style={styles.centeredView} onPressOut={() => touchOutSideClose && setSwal(false)}>
-          <View style={styles.modalView}>
+        <Pressable style={styles.centeredView} onPressOut={() => touchOutSideClose && setSwal(false)}>
+          <View style={[styles.modalView]}>
             <Text style={styles.modalText}>{text}</Text>
+            {button && (
+              <Text style={styles.btnText} onPress={() => (button ? btnFunction() : null)}>
+                Put some Function
+              </Text>
+            )}
           </View>
-        </TouchableOpacity>
+        </Pressable>
       </Modal>
     </View>
   );
