@@ -1,7 +1,7 @@
 import { View, Text, Modal, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import React, { useEffect } from 'react';
 var Swal = function (_a) {
-    var swal = _a.swal, setSwal = _a.setSwal, text = _a.text, backgroundcolor = _a.backgroundcolor, color = _a.color, positionFromBottom = _a.positionFromBottom, fontsize = _a.fontsize, touchOutSideClose = _a.touchOutSideClose, duration = _a.duration;
+    var _b = _a.swal, swal = _b === void 0 ? false : _b, setSwal = _a.setSwal, text = _a.text, _c = _a.backgroundcolor, backgroundcolor = _c === void 0 ? 'black' : _c, _d = _a.color, color = _d === void 0 ? 'white' : _d, _e = _a.positionFromBottom, positionFromBottom = _e === void 0 ? 80 : _e, _f = _a.fontsize, fontsize = _f === void 0 ? 16 : _f, _g = _a.touchOutSideClose, touchOutSideClose = _g === void 0 ? false : _g, _h = _a.duration, duration = _h === void 0 ? 2000 : _h;
     var styles = StyleSheet.create({
         centeredView: {
             flex: 1,

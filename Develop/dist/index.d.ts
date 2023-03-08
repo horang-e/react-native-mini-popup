@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare type SwalProps = {
     swal: boolean;
     setSwal: (open: boolean) => void;

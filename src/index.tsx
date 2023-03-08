@@ -14,15 +14,15 @@ export type SwalProps = {
 };
 
 const Swal = ({
-  swal,
+  swal = false,
   setSwal,
   text,
-  backgroundcolor,
-  color,
-  positionFromBottom,
-  fontsize,
-  touchOutSideClose,
-  duration,
+  backgroundcolor = 'black',
+  color = 'white',
+  positionFromBottom = 80,
+  fontsize = 16,
+  touchOutSideClose = false,
+  duration = 2000,
 }: SwalProps): JSX.Element => {
   const styles = StyleSheet.create({
     centeredView: {
