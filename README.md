@@ -1,6 +1,6 @@
 # react-native-swal
 
-⚠ now it is only available in Typescript project ⚠
+
 
 
 This library is really simple popup modal same as Sweet Alert in React Native.
