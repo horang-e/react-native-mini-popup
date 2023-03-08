@@ -9,6 +9,9 @@ React-native-swal popup for a second(It can be cutomize) and closed.
 
 
 ![ezgif-5-3efbc9f5a3](https://user-images.githubusercontent.com/105104335/223360296-37321a8c-d263-415d-8428-de4c9f7c4b9c.gif)
+![ezgif-1-48c03b2d4b](https://user-images.githubusercontent.com/105104335/223648951-9154156b-3b5a-44a4-889b-5a62d81c2da7.gif)
+
+
 
 ## Document
 
@@ -34,7 +37,7 @@ Add the source code below to where you want to use it.
 
 ```js
 return (
-   <Swal
+     <Swal
         swal={swal}
         setSwal={setSwal}
         text={text}
@@ -43,7 +46,13 @@ return (
         positionFromBottom={80}
         fontsize={16}
         touchOutSideClose={true}
-        duration={1000}
+        duration={3000}
+        textStyle={{fontFamily: 'NotoSans'}}
+        button={true}
+        buttonText={'hello'}
+        btnFunction={() => setMode(!mod)}
+        btnStyle={{color: 'red'}}
+        popup={false}
       />
 );
 ```
@@ -62,4 +71,10 @@ Below are `react-native-swal` specific properties.
 | positionFromBottom                       | X        | number                                                                                                           | set the position from bottom  (default : 80)                                                                         |
 | fontsize                       | X        | number                                                                                                               | text font size   (default : 16)                                                                                                               |
 | touchOutSideClose                | X        | boolean                                                                                                            | If you choose this props as true this modal is closed when you click outside of modal  (default : false)                                                                                   |
-| duration                     | X        | number |set how long swal opened  (default : 2000(2s))|                                                               
+| popup                     | X        | boolean |set swal is pop up and gone or not(default : true) |
+| duration                     | X        | number |set how long swal opened  (default : 2000(2s)(popup Prop has to be true))| 
+| textStyle                     | X        | {} |set text style in modal-> main text|
+| button                     | X        | boolean | add additional button to do some function when you click it|
+| buttonText                     | X        | string | set button's text(it shows when button Prop is true)|
+| btnStyle                     | X        | {} |set button's textStyle underline is default (it shows when button Prop is true)|
+| btnFunction                     | X        | () => void |set function when you hit the button(it shows when button Prop is true)|
