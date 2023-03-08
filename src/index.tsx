@@ -13,6 +13,7 @@ export type SwalProps = {
   duration?: number;
   textStyle?: {};
   button?: boolean;
+  buttonText?: string;
   btnStyle?: {};
   btnFunction?: () => void;
   popup?: boolean;
@@ -30,6 +31,7 @@ const Swal = ({
   duration = 2000,
   textStyle,
   button = false,
+  buttonText = '',
   btnStyle,
   btnFunction = () => setSwal(false),
   popup = true,
@@ -67,7 +69,7 @@ const Swal = ({
       ...textStyle,
     },
     btnText: {
-      color:'white',
+      color: 'white',
       ...btnStyle,
       textDecorationLine: 'underline',
     },
@@ -93,7 +95,7 @@ const Swal = ({
             <Text style={styles.modalText}>{text}</Text>
             {button && (
               <Text style={styles.btnText} onPress={() => (button ? btnFunction() : null)}>
-                Put some Function
+                {buttonText}
               </Text>
             )}
           </View>

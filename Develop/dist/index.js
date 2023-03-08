@@ -12,7 +12,7 @@ var __assign = (this && this.__assign) || function () {
 import { View, Text, Modal, StyleSheet, Platform, Pressable } from 'react-native';
 import React, { useEffect } from 'react';
 var Swal = function (_a) {
-    var _b = _a.swal, swal = _b === void 0 ? false : _b, setSwal = _a.setSwal, text = _a.text, _c = _a.backgroundcolor, backgroundcolor = _c === void 0 ? 'black' : _c, _d = _a.color, color = _d === void 0 ? 'white' : _d, _e = _a.positionFromBottom, positionFromBottom = _e === void 0 ? 80 : _e, _f = _a.fontsize, fontsize = _f === void 0 ? 16 : _f, _g = _a.touchOutSideClose, touchOutSideClose = _g === void 0 ? false : _g, _h = _a.duration, duration = _h === void 0 ? 2000 : _h, textStyle = _a.textStyle, _j = _a.button, button = _j === void 0 ? false : _j, btnStyle = _a.btnStyle, _k = _a.btnFunction, btnFunction = _k === void 0 ? function () { return setSwal(false); } : _k, _l = _a.popup, popup = _l === void 0 ? true : _l;
+    var _b = _a.swal, swal = _b === void 0 ? false : _b, setSwal = _a.setSwal, text = _a.text, _c = _a.backgroundcolor, backgroundcolor = _c === void 0 ? 'black' : _c, _d = _a.color, color = _d === void 0 ? 'white' : _d, _e = _a.positionFromBottom, positionFromBottom = _e === void 0 ? 80 : _e, _f = _a.fontsize, fontsize = _f === void 0 ? 16 : _f, _g = _a.touchOutSideClose, touchOutSideClose = _g === void 0 ? false : _g, _h = _a.duration, duration = _h === void 0 ? 2000 : _h, textStyle = _a.textStyle, _j = _a.button, button = _j === void 0 ? false : _j, _k = _a.buttonText, buttonText = _k === void 0 ? '' : _k, btnStyle = _a.btnStyle, _l = _a.btnFunction, btnFunction = _l === void 0 ? function () { return setSwal(false); } : _l, _m = _a.popup, popup = _m === void 0 ? true : _m;
     var styles = StyleSheet.create({
         centeredView: {
             flex: 1,
@@ -54,7 +54,7 @@ var Swal = function (_a) {
           <View style={[styles.modalView]}>
             <Text style={styles.modalText}>{text}</Text>
             {button && (<Text style={styles.btnText} onPress={function () { return (button ? btnFunction() : null); }}>
-                Put some Function
+                {buttonText}
               </Text>)}
           </View>
         </Pressable>

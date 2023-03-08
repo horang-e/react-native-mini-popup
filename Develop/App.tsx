@@ -20,8 +20,9 @@ const App = () => {
         // fontsize={16}
         touchOutSideClose={true}
         // duration={3000}
-        // textStyle={{fontFamily:'NotoSans'}}
+        // textStyle={{fontFamily: 'NotoSans'}}
         button={true}
+        buttonText={'hello'}
         btnFunction={() => setMode(!mod)}
         btnStyle={{color: 'red'}}
         popup={false}
